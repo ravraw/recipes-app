@@ -1,0 +1,25 @@
+{
+  "name": "recipes-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravraw/recipes-app.git"
+  },
+  "author": "RAVRAW",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ravraw/recipes-app/issues"
+  },
+  "homepage": "https://github.com/ravraw/recipes-app#readme",
+  "devDependencies": {
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.1.2",
+    "webpack-dev-server": "^3.1.3"
+  }
+}
