@@ -1,3 +1,3 @@
 console.log("from text.js");
 
-export default 23;
+export default 1500;
