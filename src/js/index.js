@@ -40,4 +40,4 @@ elements.searchForm.addEventListener("submit", e => {
   controlSearch();
 });
 
-const search = new Search("pizza");
+//const search = new Search("pizza");
