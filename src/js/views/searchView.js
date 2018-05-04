@@ -2,7 +2,10 @@ import { elements } from "./base";
 
 export const getInput = () => elements.searchInput.value;
 export const clearInput = () => (elements.searchInput.value = "");
-export const clearResults = () => (elements.searchResultList.innerHTML = "");
+export const clearResults = () => {
+  elements.searchResultList.innerHTML = "";
+  elements.searchResPages.innerHTML = "";
+};
 
 const limitTitleLength = (title, limit = 22) => {
   //   let newTitle = [];
@@ -74,7 +77,7 @@ const renderButtons = (page, numResults, resPerPage) => {
   elements.searchResPages.insertAdjacentHTML("afterbegin", button);
 };
 
-export const renderResults = (recipes, page = 2, resPerPage = 10) => {
+export const renderResults = (recipes, page = 1, resPerPage = 10) => {
   // render results
   let start = (page - 1) * resPerPage;
   let end = page * resPerPage;
