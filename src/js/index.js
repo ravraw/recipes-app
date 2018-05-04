@@ -22,10 +22,10 @@ const controlSearch = async () => {
   const query = searchView.getInput(); // todo
   console.log(query);
 
-  if (query) {
-    //2 create new Search object and add to state
-    state.search = new Search(query);
-  }
+  //   if (query) {
+  //     //2 create new Search object and add to state
+  state.search = new Search(query); // if no query will show top 30 recipes.
+  //   }
 
   //3  prepare UI for result
   searchView.clearInput();
@@ -53,7 +53,6 @@ elements.searchResPages.addEventListener("click", e => {
     const goToPage = parseInt(btn.dataset.goto, 10);
     searchView.clearResults();
     searchView.renderResults(state.search.result, goToPage);
-    console.log(typeOf(goToPage));
   }
 });
 
