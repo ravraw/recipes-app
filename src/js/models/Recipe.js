@@ -17,7 +17,7 @@ export default class Recipe {
       this.title = recipe.title;
       this.author = recipe.publisher;
       this.img = recipe.image_url;
-      this.url = recipe.url;
+      this.url = recipe.source_url;
       this.ingredients = recipe.ingredients;
     } catch (error) {
       console.log(error);

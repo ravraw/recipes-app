@@ -61,6 +61,37 @@ elements.searchResPages.addEventListener("click", e => {
  * Control Reciepe
  */
 
-const r = new Recipe(47025);
-r.getRecipe();
-console.log(r);
+// const r = new Recipe(47025);
+// r.getRecipe();
+// console.log(r);
+
+const controlRecipe = async () => {
+  // get id from url
+  const id = window.location.hash.replace("#", "");
+  console.log(id);
+
+  if (id) {
+    // Prepare UI for  changes
+    //create new recipe object
+    state.recipe = new Recipe(id);
+
+    try {
+      // Get Recipe  data
+      await state.recipe.getRecipe();
+      // Calculate servings and time
+      state.recipe.calcTime();
+      state.recipe.calcServings();
+      // Render Recipe
+      console.log(state.recipe);
+    } catch (err) {
+      alert("Error processing recipe");
+      clearLoader();
+    }
+  }
+};
+// window.addEventListener("hashchange", controlRecipe);
+// window.addEventListener("load", controlRecipe);
+
+["hashchange", "load"].forEach(event =>
+  window.addEventListener(event, controlRecipe)
+);
